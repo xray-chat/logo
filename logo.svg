@@ -1,0 +1,147 @@
+<svg
+  width="512"
+  height="512"
+  viewBox="0 0 512 512"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <defs>
+    <!-- 主渐变 -->
+    <linearGradient id="xrayGradient"
+      x1="80" y1="60"
+      x2="440" y2="450"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#8B5CF6"/>
+      <stop offset="0.5" stop-color="#6366F1"/>
+      <stop offset="1" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <!-- 高光渐变 -->
+    <linearGradient id="beamGradient"
+      x1="120" y1="100"
+      x2="400" y2="400"
+      gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity="0.95"/>
+      <stop offset="1" stop-color="#A5F3FC" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- 阴影 -->
+    <filter id="shadow"
+      x="-30%" y="-30%"
+      width="160%"
+      height="160%">
+      <feDropShadow
+        dx="0"
+        dy="16"
+        stdDeviation="18"
+        flood-color="#000000"
+        flood-opacity="0.25"/>
+    </filter>
+
+    <!-- 柔光 -->
+    <filter id="glow"
+      x="-50%" y="-50%"
+      width="200%"
+      height="200%">
+      <feGaussianBlur stdDeviation="8"/>
+    </filter>
+  </defs>
+
+  <!-- 背景 -->
+  <rect
+    x="16"
+    y="16"
+    width="480"
+    height="480"
+    rx="112"
+    fill="#0B0F1A"/>
+
+  <!-- Xray 扫描光束 -->
+  <path
+    d="M108 120
+       L404 404
+       L374 434
+       L78 150
+       Z"
+    fill="url(#beamGradient)"
+    opacity="0.08"
+    filter="url(#glow)"/>
+
+  <!-- 主聊天气泡 -->
+  <path
+    d="
+      M104 106
+      C104 83 123 64 146 64
+      H366
+      C389 64 408 83 408 106
+      V322
+      C408 345 389 364 366 364
+      H264
+      L184 438
+      C177 444 166 439 166 429
+      V364
+      H146
+      C123 364 104 345 104 322
+      Z
+    "
+    fill="url(#xrayGradient)"
+    filter="url(#shadow)"/>
+
+  <!-- 内部 X -->
+  <path
+    d="
+      M166 138
+      L256 228
+      L346 138
+    "
+    stroke="#FFFFFF"
+    stroke-width="34"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.97"/>
+
+  <path
+    d="
+      M166 318
+      L256 228
+      L346 318
+    "
+    stroke="#FFFFFF"
+    stroke-width="34"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    opacity="0.97"/>
+
+  <!-- 中心 X-ray 核心 -->
+  <circle
+    cx="256"
+    cy="228"
+    r="22"
+    fill="#FFFFFF"/>
+
+  <circle
+    cx="256"
+    cy="228"
+    r="9"
+    fill="#6366F1"/>
+
+  <!-- 射线 -->
+  <path
+    d="M256 92V120"
+    stroke="#FFFFFF"
+    stroke-width="8"
+    stroke-linecap="round"
+    opacity="0.8"/>
+
+  <path
+    d="M256 336V364"
+    stroke="#FFFFFF"
+    stroke-width="8"
+    stroke-linecap="round"
+    opacity="0.8"/>
+
+  <!-- 小型通讯信号点 -->
+  <circle cx="382" cy="104" r="6" fill="#A5F3FC"/>
+  <circle cx="398" cy="88" r="4" fill="#A5F3FC" opacity="0.7"/>
+  <circle cx="412" cy="73" r="3" fill="#A5F3FC" opacity="0.45"/>
+</svg>
